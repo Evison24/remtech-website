@@ -1,4 +1,4 @@
-import { NextConfig } from 'next'
+import { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
   /* config options here */
@@ -8,6 +8,16 @@ const nextConfig: NextConfig = {
   typescript: {
     ignoreBuildErrors: true,
   },
-}
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ichef.bbci.co.uk",
+        port: "",
+        pathname: "/**",
+      },
+    ],
+  },
+};
 
-export default nextConfig
+export default nextConfig;
