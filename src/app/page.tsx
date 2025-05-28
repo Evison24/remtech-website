@@ -1,9 +1,12 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import CTAForm from "@/components/core/CTAForm";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { HoverEffect } from "@/components/ui/card-hover-effect"; // Import HoverEffect
+import { Brain, Blocks, Smartphone, Code2, Wand2, Rocket } from "lucide-react";
 
 // Placeholder Testimonial Data
 const testimonials = [
@@ -43,45 +46,51 @@ const services = [
     title: "AI & LLM Development",
     description:
       "Bespoke AI solutions designed for speed, precision, and transparency. Custom LLM building, fine-tuning, and optimisation.",
+    icon: Brain,
     link: "/services/ai-llm-development",
   },
   {
     title: "Blockchain & Web3",
     description:
       "Harness decentralised technologies for secure, transparent platforms. Innovative solutions including metaverse, DeFi, and secure wallets.",
+    icon: Blocks,
     link: "/services/blockchain-web3-development",
   },
   {
     title: "Mobile Development",
     description:
       "Scalable, high-performance cross-platform & native mobile apps using React Native, Flutter, Swift, and Kotlin.",
+    icon: Smartphone,
     link: "/services/mobile-development",
   },
   {
     title: "Custom Application Development",
     description:
       "Tailored software solutions to meet unique business needs, enhancing efficiency and driving growth.",
+    icon: Code2,
     link: "/services/custom-application-development",
   },
   {
     title: "Intelligent Model Distillation",
     description:
       "Transform complex AI into agile, efficient models while retaining expertise, perfect for edge computing.",
+    icon: Wand2,
     link: "/services/intelligent-model-distillation",
   },
   {
     title: "Low-Code AI Platform",
     description:
       "Accelerate go-to-market strategies with our intuitive low-code AI platform for rapid development.",
+    icon: Rocket,
     link: "/services/low-code-ai-platform",
   },
 ];
 
 export default function HomePage() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-16 w-[100vw] pt-10">
       {/* Hero Section with Background Beams */}
-      <section className="relative text-center py-16 md:py-24 overflow-hidden rounded-lg bg-neutral-950">
+      <section className="relative  text-center py-16 md:py-24 overflow-hidden bg-neutral-950">
         <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
         <div className="relative z-10">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white">
@@ -93,13 +102,18 @@ export default function HomePage() {
           </p>
           <Link
             href="/services"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground hover:bg-primary/90 h-10 px-4 py-2"
+            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none 
+            focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 bg-primary text-primary-foreground
+             hover:bg-primary/90 h-10 px-4 py-2 mr-3"
           >
             Discover Our Solutions
           </Link>
           <a
             href="/contact"
-            className="inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 text-white hover:text-black"
+            className="inline-flex items-center justify-center whitespace-nowrap 
+            rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring 
+            focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background
+            hover:opacity-80  hover:text-accent-foreground h-[43px] px-4 py-4 text-white "
           >
             Get In Touch
           </a>
@@ -113,7 +127,7 @@ export default function HomePage() {
       </section>
 
       {/* Services Highlight Section using HoverEffect */}
-      <section className="py-16">
+      <section className="py-16 ">
         <h2 className="text-3xl font-bold text-center mb-4">
           Our Core Services
         </h2>

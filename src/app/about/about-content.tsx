@@ -10,43 +10,94 @@ import {
   TrendingUp,
   Settings2,
 } from "lucide-react";
+import { HoverEffect } from "@/components/ui/card-hover-effect";
+import {
+  Cpu,
+  BrainCircuit,
+  Cloud,
+  Shield,
+  Smartphone,
+  DatabaseZap,
+  Globe,
+} from "lucide-react";
 
 const features = [
   {
-    icon: <Lightbulb className="w-6 h-6 text-primary" />,
     title: "Strategic Efficiency",
-    desc: "Streamlined tech delivery that scales with you.",
+    description: "Streamlined tech delivery that scales with you.",
+    icon: Lightbulb,
   },
   {
-    icon: <Rocket className="w-6 h-6 text-primary" />,
     title: "Accelerated Growth",
-    desc: "LLMs and Web3 apps to fast-track your innovation.",
+    description: "LLMs and Web3 apps to fast-track your innovation.",
+    icon: Rocket,
   },
   {
-    icon: <Users className="w-6 h-6 text-primary" />,
     title: "Transparent Communication",
-    desc: "Full visibility with structured collaboration.",
+    description: "Full visibility with structured collaboration.",
+    icon: Users,
   },
   {
-    icon: <ShieldCheck className="w-6 h-6 text-primary" />,
     title: "Security-First",
-    desc: "Privacy, trust, and compliance by design.",
+    description: "Privacy, trust, and compliance by design.",
+    icon: ShieldCheck,
   },
   {
-    icon: <TrendingUp className="w-6 h-6 text-primary" />,
     title: "Optimized Investment",
-    desc: "High ROI through precision planning and build.",
+    description: "High ROI through precision planning and build.",
+    icon: TrendingUp,
   },
   {
-    icon: <Settings2 className="w-6 h-6 text-primary" />,
     title: "Adaptive Engineering",
-    desc: "Flexible architecture for evolving use cases.",
+    description: "Flexible architecture for evolving use cases.",
+    icon: Settings2,
+  },
+];
+
+const expertise = [
+  {
+    title: "AI Systems",
+    description:
+      "Powerful end-to-end intelligent automation and predictive solutions.",
+    icon: Cpu,
+  },
+  {
+    title: "LLMs",
+    description:
+      "Fine-tuning, training, and integrating large language models.",
+    icon: BrainCircuit,
+  },
+  {
+    title: "Web3",
+    description: "Decentralized systems and smart contract development.",
+    icon: Globe,
+  },
+  {
+    title: "Mobile",
+    description: "Cross-platform and native mobile development.",
+    icon: Smartphone,
+  },
+  {
+    title: "Cloud Infrastructure",
+    description:
+      "Scalable, secure deployments using modern cloud-native tools.",
+    icon: Cloud,
+  },
+  {
+    title: "Security",
+    description: "Privacy, compliance, and cyber-resilience built in.",
+    icon: Shield,
+  },
+  {
+    title: "Data Strategy",
+    description: "Data pipelines, governance, and real-time analytics.",
+    icon: DatabaseZap,
   },
 ];
 
 const AboutPageContent = () => {
   return (
-    <div className="space-y-24">
+    <div className="space-y-24 w-[100vw]">
       <section className="relative overflow-hidden py-24 bg-gradient-to-b from-background via-muted/20 to-background text-center">
         <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[#1a1a1f] to-[#0e0e13] opacity-50 blur-2xl" />
         <motion.div
@@ -68,7 +119,7 @@ const AboutPageContent = () => {
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.1 }}
-        className="px-4 md:px-0"
+        className="px-4 md:px-0 mx-[5%]"
       >
         <div className="text-center mb-12">
           <span className="text-sm uppercase text-primary font-semibold tracking-wider">
@@ -77,21 +128,9 @@ const AboutPageContent = () => {
           <h2 className="text-3xl font-bold mt-2">Built for Impact</h2>
         </div>
 
-        <div className="grid gap-6 md:grid-cols-3">
-          {features.map((feature, idx) => (
-            <div
-              key={idx}
-              className="rounded-xl border bg-card p-6 text-center hover:shadow-md transition"
-            >
-              <div className="flex justify-center mb-4">{feature.icon}</div>
-              <h3 className="text-lg font-semibold mb-2">{feature.title}</h3>
-              <p className="text-sm text-muted-foreground">{feature.desc}</p>
-            </div>
-          ))}
-        </div>
+        <HoverEffect items={features} />
       </motion.section>
 
-      {/* Our Expertise */}
       <motion.section
         initial={{ opacity: 0, y: 10 }}
         animate={{ opacity: 1, y: 0 }}
@@ -104,24 +143,8 @@ const AboutPageContent = () => {
           end-to-end innovation in:
         </p>
 
-        <div className="flex flex-wrap justify-center gap-3 text-sm text-primary-foreground/80">
-          {[
-            "AI Systems",
-            "LLMs",
-            "Web3",
-            "Mobile",
-            "Cloud Infrastructure",
-            "Security",
-            "Data Strategy",
-          ].map((tag, i) => (
-            <span
-              key={i}
-              className="bg-primary/10 text-primary px-3 py-1 rounded-full font-medium"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
+        {/* Hover cards instead of plain tags */}
+        <HoverEffect items={expertise} />
       </motion.section>
 
       {/* CTA */}

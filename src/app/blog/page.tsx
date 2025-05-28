@@ -35,7 +35,7 @@ const blogPosts = [
 
 const BlogListPage = () => {
   return (
-    <div className="min-h-screen px-4 md:px-10 py-12 space-y-16">
+    <div className="min-h-screen px-4 md:px-10 py-12 space-y-16 w-[100vw]">
       {/* Hero Header */}
       <section className="text-center py-16 md:py-24 bg-gradient-to-b from-muted/20 to-background rounded-xl shadow-sm">
         <h1 className="text-4xl md:text-5xl font-bold mb-4">

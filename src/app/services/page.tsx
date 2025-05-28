@@ -63,7 +63,7 @@ export default function ServicesOverviewPage() {
   }));
 
   return (
-    <div className="relative z-10">
+    <div className="relative z-10 w-[100vw] ">
       <HeroParallax
         products={serviceCards.map((card) => ({
           title: card.title,
@@ -74,7 +74,7 @@ export default function ServicesOverviewPage() {
       />
 
       {/* Optional CTA */}
-      <section className="text-center py-16 px-4 bg-secondary/50 rounded-lg mx-auto mt-20 max-w-4xl">
+      <section className="text-center py-16 px-4 bg-secondary/50 rounded-lg mx-auto mt-20 max-w-4xl mb-10">
         <h2 className="text-2xl font-semibold mb-4">
           Ready to Start Your Project?
         </h2>

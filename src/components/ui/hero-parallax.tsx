@@ -132,7 +132,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <motion.div
       // style={{ x: translate }}
       whileHover={{ y: -20 }}
-      className="group/product h-96 w-[30rem] relative shrink-0"
+      className="group/product h-96 w-[27rem] relative shrink-0"
     >
       <Image
         src={product.thumbnail}
