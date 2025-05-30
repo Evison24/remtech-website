@@ -28,6 +28,14 @@ const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
+                  href="/"
+                  className="text-sm text-foreground/60 hover:text-foreground"
+                >
+                  Home
+                </Link>
+              </li>
+              <li>
+                <Link
                   href="/about"
                   className="text-sm text-foreground/60 hover:text-foreground"
                 >
@@ -42,14 +50,14 @@ const Footer = () => {
                   Services
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link
                   href="/blog"
                   className="text-sm text-foreground/60 hover:text-foreground"
                 >
                   Blog
                 </Link>
-              </li>
+              </li> */}
               {/* Add links to individual services if desired */}
               <li>
                 <Link

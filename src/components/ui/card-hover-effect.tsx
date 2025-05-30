@@ -11,9 +11,9 @@ export const HoverEffect = ({
 }: {
   items: {
     title: string;
-    description: string;
+    description?: string;
     link?: string;
-    icon: React.ComponentType<{ className?: string }>;
+    icon?: React.ComponentType<{ className?: string }>;
   }[];
   className?: string;
 }) => {
@@ -52,10 +52,14 @@ export const HoverEffect = ({
                 />
               )}
             </AnimatePresence>
-            <Card>
-              <item.icon className="w-6 h-6 text-primary mt-4 " />
+            <Card className="flex items-center justify-start">
+              {item.icon && (
+                <item.icon className="w-6 h-6 text-primary mt-4 mb-4" />
+              )}
               <CardTitle>{item.title}</CardTitle>
-              <CardDescription>{item.description}</CardDescription>
+              {item.description && (
+                <CardDescription>{item.description}</CardDescription>
+              )}
 
               {item.link && (
                 <span className="text-sm font-medium text-primary group-hover:underline mt-4 block opacity-0 group-hover:opacity-100 transition-opacity duration-200">
@@ -102,10 +106,7 @@ export const CardTitle = ({
 }) => {
   return (
     <h4
-      className={cn(
-        "text-card-foreground font-bold tracking-wide mt-4",
-        className
-      )}
+      className={cn("text-card-foreground font-bold tracking-wide ", className)}
     >
       {children}
     </h4>

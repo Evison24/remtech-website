@@ -88,7 +88,7 @@ const services = [
 
 export default function HomePage() {
   return (
-    <div className="space-y-16 w-[100vw] pt-10">
+    <div className="space-y-16 w-[100vw]">
       {/* Hero Section with Background Beams */}
       <section className="relative  text-center py-16 md:py-24 overflow-hidden bg-neutral-950">
         <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
