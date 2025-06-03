@@ -9,6 +9,7 @@ import {
   useSpring,
   MotionValue,
 } from "framer-motion";
+import useBreakpoint from "@/hooks/useBreakpoint";
 
 type Product = {
   title: string;
@@ -21,9 +22,55 @@ type HeroParallaxProps = {
 };
 
 export const HeroParallax: React.FC<HeroParallaxProps> = ({ products }) => {
-  const firstRow = products.slice(0, 3);
-  const secondRow = products.slice(3, 10);
-  const thirdRow = products.slice(10, 15);
+  const breakpoint = useBreakpoint();
+
+  let firstRowSize = 3;
+  let secondRowSize = 3;
+  let thirdRowSize = 3;
+  let fourthRowSize = 1;
+  let fifthRowSize = 1;
+  let sixthRowSize = 1;
+
+  if (breakpoint === "sm") {
+    firstRowSize = 1;
+    secondRowSize = 1;
+    thirdRowSize = 1;
+    fourthRowSize = 1;
+    fifthRowSize = 1;
+    sixthRowSize = 1;
+  } else if (breakpoint === "md") {
+    firstRowSize = 2;
+    secondRowSize = 2;
+    thirdRowSize = 2;
+  } else if (breakpoint === "xl") {
+    firstRowSize = 3;
+    secondRowSize = 3;
+    thirdRowSize = 3;
+  }
+
+  const firstRow = products.slice(0, firstRowSize);
+  const secondRow = products.slice(firstRowSize, firstRowSize + secondRowSize);
+  const thirdRow = products.slice(
+    firstRowSize + secondRowSize,
+    firstRowSize + secondRowSize + thirdRowSize
+  );
+  const fourthRow = products.slice(
+    firstRowSize + secondRowSize + thirdRowSize,
+    firstRowSize + secondRowSize + thirdRowSize + fourthRowSize
+  );
+  const fifthRow = products.slice(
+    firstRowSize + secondRowSize + thirdRowSize + fourthRowSize,
+    firstRowSize + secondRowSize + thirdRowSize + fourthRowSize + fifthRowSize
+  );
+  const sixthRow = products.slice(
+    firstRowSize + secondRowSize + thirdRowSize + fourthRowSize + fifthRowSize,
+    firstRowSize +
+      secondRowSize +
+      thirdRowSize +
+      fourthRowSize +
+      fifthRowSize +
+      sixthRowSize
+  );
 
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
@@ -55,14 +102,20 @@ export const HeroParallax: React.FC<HeroParallaxProps> = ({ products }) => {
     springConfig
   );
   const translateY = useSpring(
-    useTransform(scrollYProgress, [0, 0.4], [-400, 100]),
+    useTransform(
+      scrollYProgress,
+      [0, 0.2],
+      [breakpoint == "sm" ? -1000 : -400, 100]
+    ),
     springConfig
   );
 
   return (
     <div
       ref={ref}
-      className="min-h-screen overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d]"
+      className={`${
+        breakpoint === "sm" ? "h-[460vh]" : "min-h-screen"
+      }  overflow-hidden antialiased relative flex flex-col [perspective:1000px] [transform-style:preserve-3d] sm:mx-[10%] md:mx-0`}
     >
       <Header />
 
@@ -99,6 +152,38 @@ export const HeroParallax: React.FC<HeroParallaxProps> = ({ products }) => {
             />
           ))}
         </motion.div>
+
+        {breakpoint === "sm" && (
+          <>
+            <motion.div className="flex justify-center space-x-6 px-6">
+              {fourthRow.map((product) => (
+                <ProductCard
+                  key={product.title}
+                  product={product}
+                  translate={translateX}
+                />
+              ))}
+            </motion.div>
+            <motion.div className="flex justify-center space-x-6 px-6">
+              {fifthRow.map((product) => (
+                <ProductCard
+                  key={product.title}
+                  product={product}
+                  translate={translateX}
+                />
+              ))}
+            </motion.div>
+            <motion.div className="flex justify-center space-x-6 px-6">
+              {sixthRow.map((product) => (
+                <ProductCard
+                  key={product.title}
+                  product={product}
+                  translate={translateX}
+                />
+              ))}
+            </motion.div>
+          </>
+        )}
       </motion.div>
     </div>
   );
@@ -132,7 +217,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <motion.div
       // style={{ x: translate }}
       whileHover={{ y: -20 }}
-      className="group/product h-96 w-[27rem] relative shrink-0"
+      className="group/product h-96 w-[23rem] relative shrink-0 "
     >
       <Image
         src={product.thumbnail}

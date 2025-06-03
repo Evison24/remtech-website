@@ -1,6 +1,6 @@
 "use client";
 
-import { HeroParallax } from "@/components/ui/hero-parallax"; // You need to copy this from Aceternity UI
+import { HeroParallax } from "@/components/ui/hero-parallax";
 import {
   BrainCog,
   Phone,
