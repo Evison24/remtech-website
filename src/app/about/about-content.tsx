@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Lightbulb,
   Rocket,
@@ -97,7 +98,7 @@ const expertise = [
 
 const AboutPageContent = () => {
   return (
-    <div className="space-y-24 w-[100vw]">
+    <div className="space-y-5 w-[100vw]">
       <section className="relative overflow-hidden py-24 bg-gradient-to-b from-background via-muted/20 to-background text-center">
         <div className="absolute inset-0 -z-10 bg-gradient-to-tr from-[#1a1a1f] to-[#0e0e13] opacity-50 blur-2xl" />
         <motion.div
@@ -106,8 +107,17 @@ const AboutPageContent = () => {
           transition={{ duration: 0.5 }}
           className="space-y-4"
         >
-          <h1 className="text-4xl font-bold">Welcome to Remtech Labs</h1>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-5 items-center mb-6">
+            <h1 className="text-5xl font-bold">Welcome to</h1>
+            <Image
+              src="/images/wlogo.svg"
+              alt="Remtech Labs Logo"
+              width={280}
+              height={150}
+            />
+          </div>
+
+          <p className="text-muted-foreground text-xl max-w-3xl mx-auto">
             Empowering innovation through strategy, technology, and seamless
             execution.
           </p>

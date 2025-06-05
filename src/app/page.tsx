@@ -6,7 +6,15 @@ import CTAForm from "@/components/core/CTAForm";
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { HoverEffect } from "@/components/ui/card-hover-effect"; // Import HoverEffect
-import { Brain, Blocks, Smartphone, Code2, Wand2, Rocket } from "lucide-react";
+import {
+  Brain,
+  Blocks,
+  Smartphone,
+  Code2,
+  Wand2,
+  Rocket,
+  HandshakeIcon,
+} from "lucide-react";
 
 // Placeholder Testimonial Data
 const testimonials = [
@@ -146,24 +154,25 @@ export default function HomePage() {
         </h2>
         {/* Consider using Aceternity's 3D Card Effect or similar for this section */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
-          <div>
-            {/* <div className="text-4xl mb-4">💡</div> */}
+          <div className="flex flex-col items-center">
+            <Brain className="w-10 h-10  mb-4" />
             <h3 className="text-xl font-semibold mb-2">Strategic Efficiency</h3>
             <p className="text-foreground/70 text-sm">
               Streamlined processes aligned with your business objectives for
               maximum ROI.
             </p>
           </div>
-          <div>
-            {/* <div className="text-4xl mb-4">🚀</div> */}
+          <div className="flex flex-col items-center">
+            <Rocket className="w-10 h-10  mb-4" />
+
             <h3 className="text-xl font-semibold mb-2">Accelerated Growth</h3>
             <p className="text-foreground/70 text-sm">
               Deep expertise tailored to your goals, helping you stay ahead in
               evolving markets.
             </p>
           </div>
-          <div>
-            {/* <div className="text-4xl mb-4">🤝</div> */}
+          <div className="flex flex-col items-center">
+            <HandshakeIcon className="w-10 h-10  mb-4" />
             <h3 className="text-xl font-semibold mb-2">
               Enhanced Collaboration
             </h3>
