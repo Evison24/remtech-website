@@ -1,57 +1,53 @@
 "use client";
 
 import { HeroParallax } from "@/components/ui/hero-parallax";
-import {
-  BrainCog,
-  Phone,
-  Laptop,
-  Blocks,
-  GlobeLock,
-  AppWindow,
-} from "lucide-react";
 
 const services = [
   {
-    title: "AI & LLM Development",
+    title: "REN - AI & LLM Development",
     description:
-      "Custom AI pipelines, RAG architecture, fine-tuning, and model distillation.",
-    icon: BrainCog,
-    key: "ai-llm-development",
+      "Bespoke AI solutions designed for speed, precision, and transparency. Custom LLM building, fine-tuning, and optimisation.",
+    link: "/services/ai-llm-development",
+    image: "/images/services/ren.png",
   },
   {
-    title: "Blockchain & Web3",
+    // title: "Blockchain & Web3",
+    title: "CHEZA - AI sports prediction engine",
     description:
-      "Secure decentralized solutions: DeFi, wallets, NFT platforms, and tokenization.",
-    icon: GlobeLock,
-    key: "blockchain-web3-development",
+      "Harness decentralised technologies for secure, transparent platforms. Innovative solutions including metaverse, DeFi, and secure wallets.",
+    link: "/services/ai-sports-prediction-engine",
+    image: "/images/services/cheza.png",
   },
   {
-    title: "React Native Apps",
+    title: "Dibbery - Mobile Development",
     description:
-      "High-performance cross-platform mobile apps that feel native.",
-    icon: Phone,
-    key: "mobile-development",
+      "Scalable, high-performance cross-platform & native mobile apps using React Native, Flutter, Swift, and Kotlin.",
+    link: "/services/mobile-development",
+    image: "/images/services/dibbery.png",
   },
   {
-    title: "Custom Web Platforms",
+    // title: "Custom Application Development",
+    title: "GOMA - RPG Blockchain game on Solana",
     description:
-      "Scalable web solutions: PWAs, dashboards, SaaS, and API-based services.",
-    icon: Laptop,
-    key: "custom-application-development",
+      "Tailored software solutions to meet unique business needs, enhancing efficiency and driving growth.",
+    link: "/services/game-development",
+    image: "/images/services/gomarpg.png",
   },
   {
-    title: "Native App Development",
+    // title: "Intelligent Model Distillation",
+    title: "Telehealth Mobile AI Consultation platform",
     description:
-      "Purpose-built iOS/Android apps with top-tier performance and UX.",
-    icon: AppWindow,
-    key: "native-app-development",
+      "Transform complex AI into agile, efficient models while retaining expertise, perfect for edge computing.",
+    link: "/services/intelligent-model-distillation",
+    image: "/images/services/healthpulse.png",
   },
   {
-    title: "Modular Architecture",
+    // title: "Low-Code AI Platform",
+    title: "Kweet - Twitter clone (written in Kotlin)",
     description:
-      "Composability-first engineering with clean, extendable architecture.",
-    icon: Blocks,
-    key: "modular-architecture",
+      "Accelerate go-to-market strategies with our intuitive low-code AI platform for rapid development.",
+    link: "/services/native-app-development",
+    image: "/images/services/kweet.png",
   },
 ];
 
@@ -59,7 +55,9 @@ export default function ServicesOverviewPage() {
   const serviceCards = services.map((service) => ({
     title: service.title,
     description: service.description,
-    icon: <service.icon className="w-8 h-8 text-primary mb-4" />,
+    link: service.link,
+    image: service.image,
+    // icon: <service.icon className="w-8 h-8 text-primary mb-4" />,
   }));
 
   return (
@@ -67,8 +65,9 @@ export default function ServicesOverviewPage() {
       <HeroParallax
         products={serviceCards.map((card) => ({
           title: card.title,
-          link: "#",
+          link: card.link,
           thumbnail:
+            card.image ??
             "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/14202/production/_108243428_gettyimages-871148930.jpg.webp", // placeholder or actual image
         }))}
       />

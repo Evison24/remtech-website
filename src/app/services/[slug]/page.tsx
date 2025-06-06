@@ -3,12 +3,21 @@ import { notFound } from "next/navigation";
 import type { Metadata, ResolvingMetadata } from "next";
 import { Brain, Link2, Smartphone, Monitor, Target } from "lucide-react";
 import { HoverEffect } from "@/components/ui/card-hover-effect";
+import HorizontalImageScroller from "@/components/services/HorizontalImageScroller";
 
 const services = [
   {
     slug: "ai-llm-development",
-    title: "AI & LLM Development Services",
+    title: "REN - AI & LLM Development Services",
     icon: Brain,
+    images: [
+      "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/14202/production/_108243428_gettyimages-871148930.jpg.webp",
+      "https://files.selar.co/product-images/2024/products/Viclabulary/project-management-selar.co-65f60d5694847.jpg",
+      "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/14202/production/_108243428_gettyimages-871148930.jpg.webp",
+      "https://files.selar.co/product-images/2024/products/Viclabulary/project-management-selar.co-65f60d5694847.jpg",
+      "https://ichef.bbci.co.uk/ace/ws/640/cpsprodpb/14202/production/_108243428_gettyimages-871148930.jpg.webp",
+      "https://files.selar.co/product-images/2024/products/Viclabulary/project-management-selar.co-65f60d5694847.jpg",
+    ],
     content: [
       {
         heading:
@@ -26,8 +35,8 @@ const services = [
     ],
   },
   {
-    slug: "blockchain-web3-development",
-    title: "Blockchain & Web3 Development Services",
+    slug: "ai-sports-prediction-engine",
+    title: "CHEZA - AI sports prediction engine",
     icon: Link2,
     content: [
       {
@@ -49,12 +58,12 @@ const services = [
   },
   {
     slug: "mobile-development",
-    title: "Mobile Development Services (React Native)",
+    title: "Dibbery - Mobile Development Services (FLutter,React Native)",
     icon: Smartphone,
     content: [
       {
         heading:
-          "Deliver exceptional mobile experiences with Remtech Labs’ expert React Native team...",
+          "Deliver exceptional mobile experiences with Remtech Labs’ expert team...",
         subsections: [
           { title: "Why Choose React Native?", text: "" },
           { title: "Our Expertise", text: "" },
@@ -64,8 +73,8 @@ const services = [
     ],
   },
   {
-    slug: "web-development",
-    title: "Web Development Services",
+    slug: "game-development",
+    title: "GOMA - RPG Blockchain game on Solana",
     icon: Monitor,
     content: [
       {
@@ -82,8 +91,26 @@ const services = [
     ],
   },
   {
+    slug: "intelligent-model-distillation",
+    title: "Telehealth Mobile AI Consultation platform",
+    icon: Target,
+    content: [
+      {
+        heading:
+          "Elevate your business with bespoke mobile applications crafted for peak performance...",
+        subsections: [
+          { title: "Platform-Specific Expertise", text: "" },
+          { title: "Optimized Performance", text: "" },
+          { title: "Seamless User Experience", text: "" },
+          { title: "Full Hardware Access", text: "" },
+        ],
+        cta: "Need a high-performance native application? Contact us to discuss your iOS or Android project requirements.",
+      },
+    ],
+  },
+  {
     slug: "native-app-development",
-    title: "Native App Development Services",
+    title: "Kweet - Twitter clone (written in Kotlin)",
     icon: Target,
     content: [
       {
@@ -134,7 +161,36 @@ const ServiceDetailPage = ({ params }: { params: { slug: string } }) => {
   const Icon = service.icon;
 
   const subsections = service.content[0]?.subsections ?? [];
-
+  const testimonials = [
+    {
+      quote:
+        "Remtech Labs transformed our workflow with their attention to detail and innovative features. Their AI solution was exactly what we needed.",
+      name: "Sarah Chen",
+      designation: "Product Manager at TechFlow",
+      src: "https://images.unsplash.com/photo-1531590878845-12627191e687?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "The implementation was seamless, and the results exceeded our expectations. The platform's flexibility is outstanding.",
+      name: "Michael Rodriguez",
+      designation: "CTO at InnovateSphere",
+      src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Working with Remtech Labs felt like a true partnership. Their communication and expertise in blockchain development were invaluable.",
+      name: "Emily Carter",
+      designation: "CEO of SecureChain",
+      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+    {
+      quote:
+        "Their React Native team delivered a high-quality mobile app ahead of schedule. Highly recommended for cross-platform development.",
+      name: "David Lee",
+      designation: "Head of Mobile at ConnectApp",
+      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    },
+  ];
   return (
     <div className="space-y-12 px-4 sm:px-6 lg:px-24 py-12 w-[100vw]">
       <section>
@@ -144,12 +200,18 @@ const ServiceDetailPage = ({ params }: { params: { slug: string } }) => {
             {service.title}
           </h1>
         </div>
+
         <HoverEffect
           items={subsections.map((sub) => ({
             title: sub.title,
             description: sub.text,
           }))}
         />
+        {service.images?.length > 0 && (
+          <section className="py-12">
+            <HorizontalImageScroller images={service.images || []} />
+          </section>
+        )}
       </section>
     </div>
   );

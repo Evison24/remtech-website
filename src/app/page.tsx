@@ -98,9 +98,10 @@ export default function HomePage() {
   return (
     <div className="space-y-16 w-[100vw]">
       {/* Hero Section with Background Beams */}
-      <section className="relative  text-center py-16 md:py-24 overflow-hidden bg-neutral-950">
+      <section className="relative  text-center py-16 md:py-24 overflow-hidden bg-neutral-950 h-[100vh]">
         <BackgroundBeams className="absolute top-0 left-0 w-full h-full z-0" />
-        <div className="relative z-10">
+
+        <div className="relative z-10 mt-[10%]">
           <h1 className="text-4xl md:text-6xl font-bold mb-4 tracking-tight text-white">
             Where Innovation Meets Intelligence
           </h1>

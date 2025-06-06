@@ -16,6 +16,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "files.selar.co",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

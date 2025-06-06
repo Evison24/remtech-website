@@ -217,7 +217,8 @@ export const ProductCard: React.FC<ProductCardProps> = ({
     <motion.div
       // style={{ x: translate }}
       whileHover={{ y: -20 }}
-      className="group/product h-96 w-[23rem] relative shrink-0 "
+      className="group/product h-96 w-[23rem] relative shrink-0 hover:cursor-pointer "
+      onClick={() => window.open(product.link, "_blank")}
     >
       <Image
         src={product.thumbnail}
