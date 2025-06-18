@@ -22,13 +22,32 @@ const services = [
       {
         heading:
           "Transform your organisation with bespoke AI solutions designed for speed, precision and complete transparency...",
+        text: "REN is a consulting platform delivering AI-powered solutions in machine learning, automation, and data integration. It enables enterprises to optimise operations and drive innovation. Key features include instant content compliance checks and ESG benchmarking, allowing organisations to compare against global peers using advanced analytics and document insights.",
         subsections: [
-          { title: "Custom AI Application Development", text: "" },
-          { title: "LLM Model Building & Fine‑Tuning", text: "" },
-          { title: "Prompt Enhancement & Tuning", text: "" },
-          { title: "Retrieval‑Augmented Generation (RAG)", text: "" },
-          { title: "Expert Response Enhancement", text: "" },
-          { title: "Model Distillation & Knowledge Transfer", text: "" },
+          {
+            title: "Custom AI Application Development",
+            text: "We design and develop tailored AI solutions that align with your business goals—ranging from intelligent automation tools to predictive analytics systems, all fully integrated with your existing workflows.",
+          },
+          {
+            title: "LLM Model Building & Fine‑Tuning",
+            text: "Our team builds and fine-tunes large language models on domain-specific data to improve accuracy, reduce hallucination, and optimize performance for your unique industry use case.",
+          },
+          {
+            title: "Prompt Enhancement & Tuning",
+            text: "We craft and refine prompts to maximize LLM output relevance and reliability, ensuring high-quality interactions whether used for chatbots, search engines, or internal tools.",
+          },
+          {
+            title: "Retrieval‑Augmented Generation (RAG)",
+            text: "We implement RAG architectures that allow LLMs to dynamically retrieve external knowledge, enabling more accurate and up-to-date responses grounded in your internal or public datasets.",
+          },
+          {
+            title: "Expert Response Enhancement",
+            text: "Our expert tuning pipelines enhance model responses using post-processing and evaluation layers—ensuring that generated content meets quality, tone, and compliance standards.",
+          },
+          {
+            title: "Model Distillation & Knowledge Transfer",
+            text: "We help you compress powerful models into lightweight, production-ready versions while preserving performance—ideal for deployment on edge devices, mobile apps, or private servers.",
+          },
         ],
         cta: "Ready to accelerate your AI journey? Contact us today to discuss how our tailored solutions can drive innovation and competitive advantage for your business.",
       },
@@ -42,6 +61,7 @@ const services = [
       {
         heading:
           "Harness the transformative potential of decentralised technologies...",
+        text: "Cheza is an AI-powered sports-prediction platform built around a fine-tuned DeepSeek R1 7B LLM that digests betting odds, team form, and fan/expert sentiment to generate clear, explainable picks. Users can subscribe to our “House” agent or create their custom agents in a transparent marketplace, then track their simulated bankroll with an immutable ledger. We’ve launched in the Premier League, with NFL and NBA support right around the corner.",
         subsections: [
           { title: "Metaverse Casinos", text: "" },
           { title: "Decentralised Finance & Sports Betting", text: "" },
@@ -58,16 +78,41 @@ const services = [
   },
   {
     slug: "mobile-development",
-    title: "Dibbery - Mobile Development Services (FLutter,React Native)",
+    title: "Dibbery - Mobile Development Services ( Flutter, React Native )",
     icon: Smartphone,
+
     content: [
       {
         heading:
           "Deliver exceptional mobile experiences with Remtech Labs’ expert team...",
+        text: "One Stop Destination For Your Gardening Desires, Dibbery is a Flutter and TypeScript/AWS app offering on-demand gardener bookings and curated affiliate products. Earn via hourly service commissions and product partnerships. Grow smarter with our AI Horticulture Platform, blending technology with gardening for better plant care and growth.",
         subsections: [
-          { title: "Why Choose React Native?", text: "" },
-          { title: "Our Expertise", text: "" },
+          {
+            title: "User-Centric Design & Booking Flow",
+            text: "We designed Dibbery with an intuitive interface that allows users to search, compare, and book local gardeners within seconds. The booking system includes time slot selection, service category filtering, and real-time availability.",
+          },
+          {
+            title: "Secure Messaging & Quote Requests",
+            text: "Integrated secure messaging enables users and gardeners to discuss job details, share images, and confirm pricing—all within the app before any job is scheduled.",
+          },
+          {
+            title: "Community Feed & Social Engagement",
+            text: "Dibbery fosters a gardening community where users can post garden updates, share before-and-after photos, comment on others’ posts, and like inspiring work. This builds trust and engagement across the platform.",
+          },
+          {
+            title: "Ratings, Reviews & Trust Signals",
+            text: "Dibbery includes a robust review system, giving users confidence in choosing providers based on ratings, completed job history, and user feedback.",
+          },
+          {
+            title: "Payment Integration & Wallet System",
+            text: "We implemented a secure in-app payment system with support for instant transactions, job deposits, and a digital wallet for managing earnings and refunds.",
+          },
+          {
+            title: "Admin Dashboard & Service Management",
+            text: "A backend dashboard gives Dibbery admins full control over users, services, payments, and performance analytics, helping to scale operations and manage disputes efficiently.",
+          },
         ],
+
         cta: "Ready to Transform Your Mobile Strategy? Partner with Remtech Labs to bring your mobile vision to life.",
       },
     ],
@@ -80,6 +125,7 @@ const services = [
       {
         heading:
           "Empower Your Digital Presence. Understanding Web & App Development Costs...",
+        text: "GOMA is an open-world, cultivation-based RPG built in Unreal Engine 5. Players master three paths—Qi, Soul, Body—rise through sect hierarchies, discover ancient inheritances, and engage in dynamic PvE and PvP. A Solana token economy powers a true play-to-earn marketplace. Embark on the journey to become the God of Martial Arts.",
         subsections: [
           { title: "Key Cost Factors", text: "" },
           { title: "Why Choose Web Applications?", text: "" },
@@ -92,12 +138,13 @@ const services = [
   },
   {
     slug: "intelligent-model-distillation",
-    title: "Telehealth Mobile AI Consultation platform",
+    title: "Telehealth Mobile Consultation platform",
     icon: Target,
     content: [
       {
         heading:
           "Elevate your business with bespoke mobile applications crafted for peak performance...",
+        text: "HealthPulse is a comprehensive telehealth platform offering AI-powered symptom checking, secure video consultations, e-prescription management, and wearable device integration. Built with React Native and FastAPI, it provides seamless remote healthcare access while maintaining HIPAA compliance, empowering patients and healthcare providers with real-time health monitoring and convenient virtual care options.",
         subsections: [
           { title: "Platform-Specific Expertise", text: "" },
           { title: "Optimized Performance", text: "" },
@@ -116,6 +163,7 @@ const services = [
       {
         heading:
           "Elevate your business with bespoke mobile applications crafted for peak performance...",
+        text: "Kweet is a modern microblogging platform built with Kotlin and Ktor. This Twitter-like service offers real-time social interaction through concise posts, featuring secure JWT authentication, WebSocket-powered live updates, and robust PostgreSQL persistence. With a responsive interface and Docker deployment, Kweet delivers a seamless social experience for connected communities.",
         subsections: [
           { title: "Platform-Specific Expertise", text: "" },
           { title: "Optimized Performance", text: "" },
@@ -161,36 +209,7 @@ const ServiceDetailPage = ({ params }: { params: { slug: string } }) => {
   const Icon = service.icon;
 
   const subsections = service.content[0]?.subsections ?? [];
-  const testimonials = [
-    {
-      quote:
-        "Remtech Labs transformed our workflow with their attention to detail and innovative features. Their AI solution was exactly what we needed.",
-      name: "Sarah Chen",
-      designation: "Product Manager at TechFlow",
-      src: "https://images.unsplash.com/photo-1531590878845-12627191e687?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "The implementation was seamless, and the results exceeded our expectations. The platform's flexibility is outstanding.",
-      name: "Michael Rodriguez",
-      designation: "CTO at InnovateSphere",
-      src: "https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Working with Remtech Labs felt like a true partnership. Their communication and expertise in blockchain development were invaluable.",
-      name: "Emily Carter",
-      designation: "CEO of SecureChain",
-      src: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      quote:
-        "Their React Native team delivered a high-quality mobile app ahead of schedule. Highly recommended for cross-platform development.",
-      name: "David Lee",
-      designation: "Head of Mobile at ConnectApp",
-      src: "https://images.unsplash.com/photo-1535713875002-d1d0cf377fde?q=80&w=800&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-  ];
+
   return (
     <div className="space-y-12 px-4 sm:px-6 lg:px-24 py-12 w-[100vw]">
       <section>
@@ -199,6 +218,12 @@ const ServiceDetailPage = ({ params }: { params: { slug: string } }) => {
           <h1 className="text-3xl sm:text-4xl font-bold tracking-tight">
             {service.title}
           </h1>
+        </div>
+        {/* Description Block */}
+        <div className="bg-muted/10 border border-muted rounded-xl p-6 max-w-4xl mx-auto text-center shadow-md">
+          <p className="text-muted-foreground text-base sm:text-lg leading-relaxed">
+            {service.content[0]?.text || ""}
+          </p>
         </div>
 
         <HoverEffect
